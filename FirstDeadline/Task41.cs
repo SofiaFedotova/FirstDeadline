@@ -20,18 +20,18 @@ namespace FirstDeadline
                 product *= a[i];
             }
             Console.WriteLine($"Product of elements with is{product}");
-            for (int i = 0; i < s.Length; i = i + 2)
+            for (int i = 0; i < s.Length; i = i + 1)
             {
                 if (a[i] != 0)
                     if (minzero == -1) 
-                        minzero = a[i];
+                        minzero = i;
                     if(minzero != a[i])
-                       maxzero = a[i];
+                       maxzero = i;
             }
-            for (int i = minzero + 1; i < maxzero; i = i + 2)
+            for (int i = minzero + 1; i < maxzero; i = i + 1)
                 summ += a[i];
 
-            Console.WriteLine($"Summ between nonzeros is{summ}");
+            Console.WriteLine($"Summ between nonzeros is {summ}");
             Console.ReadKey();
         }
     }
