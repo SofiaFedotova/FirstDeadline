@@ -10,11 +10,10 @@ namespace FirstDeadline
     {
         static void Main(string[] args)
         {
-            _1 first = new _1();
-            Task41 fourf = new Task41();
-            first.Task1();
-            fourf.Task4();
-
+            Task1 first = new Task1();
+            Task5 fourf = new Task5();
+            first.Task11();
+            fourf.Task51(@"C:\Users\Asus\Desktop\учеба\programmes\1.txt");
         }
     }
 }
