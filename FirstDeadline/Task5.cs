@@ -11,15 +11,15 @@ namespace FirstDeadline
     {
         public void Task51(string Name)
         {
-            string line;
+            string line, text;
             try
             {
                 using (StreamReader sr = new StreamReader(Name))
                 {
-                    //string line;
                     while ((line = sr.ReadLine()) != null)
                     {
                         Console.WriteLine(line);
+                        //text += line;
                     }
                 }
                 Console.WriteLine($"{line}");

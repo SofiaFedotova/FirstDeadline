@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FirstDeadline
 {
@@ -11,22 +10,28 @@ namespace FirstDeadline
     {
         public void Task21()
         {
-            chart chet = new chart();
-            private void Window_Loaded(object sender, RoutedEventArgs e)
+            Console.WriteLine("Enter R1");
+            double R1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter R2");
+            double R2 = Convert.ToDouble(Console.ReadLine());
+            Console.ReadKey();
+            double[] mas = { };
+            for (int i = -200; i < 200; i++)
             {
-                // Все графики находятся в пределах области построения ChartArea, создадим ее
-                chart.ChartAreas.Add(new ChartArea("Default"));
-
-                // Добавим линию, и назначим ее в ранее созданную область "Default"
-                chart.Series.Add(new Series("Series1"));
-                chart.Series["Series1"].ChartArea = "Default";
-                chart.Series["Series1"].ChartType = SeriesChartType.Line;
-
-                // добавим данные линии
-                string[] axisXData = new string[] { "a", "b", "c" };
-                double[] axisYData = new double[] { 0.1, 1.5, 1.9 };
-                chart.Series["Series1"].Points.DataBindXY(axisXData, axisYData);
-
+                if (i <= 2 * R1)
+                    mas[i] = -i;
+                if (i >= 2 * R1 && i <= 0)
+                    mas[i] = -Math.Pow(Math.Pow(R1, 2) - Math.Pow(i + R2, 2), 0.5);
+                if (i <= 2 * R2 && i >= 0)
+                    mas[i] = Math.Pow(Math.Pow(R2, 2) - Math.Pow(i - R2, 2), 0.5);
+                if (i >= 2 * R2 && i <= 2 * R2 + 5)
+                    mas[i] = -0.5 * i;
+                if (i >= 2 * R2 + 5)
+                    mas[i] = -1 * R2 + 2.5;
+            }
+            for (int i = -200; i < 200; i++)
+            {
+                Console.WriteLine($"x = {i} y = {mas[i]} ");
             }
         }
     }
