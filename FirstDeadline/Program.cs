@@ -15,9 +15,9 @@ namespace FirstDeadline
             Vector ff = new Vector(1,1,1);
             Vector fif = new Vector(5,6,7);
 
-            Task42 ffff = new Task42();
+            Task5 ffff = new Task5();
 
-            ffff.Task4();
+            ffff.Task51();
         }
 
     }
