@@ -11,19 +11,29 @@ namespace FirstDeadline
     {
         public void Task51(string Name)
         {
-            string line, text;
+            string line;
+            int i = 0;
+            
             try
             {
                 using (StreamReader sr = new StreamReader(Name))
                 {
+                    string[] x = { };
                     while ((line = sr.ReadLine()) != null)
                     {
+                        string[] lines = line.Split('.');
+                        for(int r = 0; r < lines.Length; r++)
+                        {
+                            x[i] = lines[r];
+                            i++;
+                        }
                         Console.WriteLine(line);
                         //text += line;
                     }
                 }
                 Console.WriteLine($"{line}");
                 Console.ReadKey();
+                
             }
             catch (IOException e)
             {
