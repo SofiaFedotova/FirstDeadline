@@ -10,7 +10,7 @@ namespace FirstDeadline
     {
         public void Srch(List<Do> A, string Tg)
         {
-            string[] str = { "" };
+            string[] str = new string[22];
             int num = 0;
             foreach (Do i in A)
             {

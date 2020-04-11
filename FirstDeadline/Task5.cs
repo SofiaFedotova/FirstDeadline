@@ -17,36 +17,34 @@ namespace FirstDeadline
             {
                 using (StreamReader sr = new StreamReader("C:1.txt"))
                 {
-                    string[] x = { };
-                    int i = 0;
+                    //List<string> mas = new List<string>();
+                   
                     while ((line = sr.ReadLine()) != null)
                     {
                         string[] lines = line.Split('.');
-                        for (int r = 0; r < lines.Length; r++)
+                        /*for (int r = 0; r < lines.Length; r++)
                         {
                             x[i] = lines[r];
                             i++;
                         }
-                        Console.WriteLine(line);
-                        //text += line;
-                    }
-                    for (int j = 0; j < x.Length; j++)
-                    {
-                        string[] a = x[i].Split(' ');
-                        string[] y = { };
-                        for (int f = 0; f < a.Length; f++)
-                            y[j] = a[f];
-                        int n = y.Length;
-                        Random rnd = new Random();
-                        while (n > 1)
-                        {
-                            int k = rnd.Next(n--);
-                            string temp = y[n];
-                            y[n] = y[k];
-                            y[k] = temp;
+                        */
+                       for (int j = 0; j < lines.Length; j++)
+                       {
+                          string[] a = lines[j].Split(' ');
+                          for (int f = a.Length-1; f >= 0; f--)
+                            {
+
+                                Random rnd = new Random(f);
+                                    int k = rnd.Next(f);
+                                    string temp = a[f];
+                                    a[f] = a[k];
+                                    a[k] = temp;
+                                
+                            }
+                            for (int t = 0; t < a.Length; t++)
+                                Console.WriteLine($"{a}");
                         }
-                        for (int t = 0; t < y.Length; t++)
-                            Console.WriteLine($"{y}");
+                        
                     }
                     Console.ReadKey();
 
