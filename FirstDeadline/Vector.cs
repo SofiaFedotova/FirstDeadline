@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FirstDeadline
+namespace TaskSeven
 {
     class Vector
     {
@@ -46,5 +46,6 @@ namespace FirstDeadline
         {
             return A.X * B.X + A.Y * B.Y + A.Z * B.Z;
         }
+
     }
     }

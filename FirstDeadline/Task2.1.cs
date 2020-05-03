@@ -4,20 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FirstDeadline
+namespace TaskTwo
 {
     class Task2
     {
-        public void Task21()
-        {
-            try
+       public double[] GetR1R2()
             {
-                Console.WriteLine("Enter R1");
-                double R1 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Enter R2");
-                double R2 = Convert.ToDouble(Console.ReadLine());
-                Console.ReadKey();
-                double[] mas = new double[400];
+                double R1, R2;
+                bool flag1 = false;
+                bool flag2 = false;
+                do
+                {
+                    Console.WriteLine("Enter R1");
+                    string r1 = Console.ReadLine();
+                    Console.WriteLine("Enter R2");
+                    string r2 = Console.ReadLine();
+                    if (double.TryParse(r1, out R1)) flag1 = true;
+                    else Console.WriteLine("Ошибка: нужно ввести число.");
+                    if (double.TryParse(r1, out R2)) flag2 = true;
+                    else Console.WriteLine("Ошибка: нужно ввести число.");
+                } while (!flag1 && !flag2);
+                
+                double[] mas = { R1, R2 };
+                return mas;
+            }
+
+            public void Plot(double R1, double R2){
+              double[] mas = new double[400];
+
                 for (int j = 0; j < 400; j++)
                 {
                     double i = j - 200;
@@ -38,11 +52,9 @@ namespace FirstDeadline
                 }
                 Console.ReadKey();
             }
-            catch (System.FormatException)
-            {
-                Console.WriteLine("Входная строка имела неверный формат");
-                Console.ReadKey();
-            }
-            }
+            
         }
+    class Main { 
+
+   }
 }
